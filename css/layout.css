@@ -51,14 +51,6 @@ a:hover
 {
 	padding-left: 15px;
 }
-#nav a
-{
-	color: #aaaaaa;
-}
-#nav a:hover
-{
-	color: #ff9900;
-}
 #watermark
 {
 	position: fixed;
