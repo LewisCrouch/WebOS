@@ -1,0 +1,133 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>WebOS</title>
+
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="stylesheet" href="css/layout.css" type="text/css">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:300,400" type="text/css">
+
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+
+		<script type="text/javascript">
+			var test1 = function()
+			{
+				create_dlg("test1", "Test 1 - Text", "Content goes here.");
+			}
+
+			var test2 = function()
+			{
+				create_dlg("test2", "Test 2 - Image", "<img src=\"http://wac.450f.edgecastcdn.net/80450F/hudsonvalleycountry.com/files/2015/01/cat4.jpg\" />");
+			}
+
+			var test3 = function()
+			{
+				var login = $("<div/>")
+					.attr("id", "login")
+				;
+				var form = $("<form/>")
+					.attr("action", "javascript: alert('Not yet implemented!');")
+					.attr("method", "POST")
+				;
+				var table = $("<table/>");
+
+				var username_row = $("<tr/>"), username_cell = $("<td/>");
+				var password_row = $("<tr/>"), password_cell = $("<td/>");
+				var submit_row = $("<tr/>"), submit_cell = $("<td/>");
+
+				var username = $("<input/>")
+					.attr("name", "username")
+					.attr("type", "text")
+					.attr("placeholder", "Username")
+				;
+				var password = $("<input/>")
+					.attr("name", "password")
+					.attr("type", "password")
+					.attr("placeholder", "Password")
+				;
+				var submit = $("<input/>")
+					.attr("name", "submit")
+					.attr("type", "submit")
+					.attr("value", "Login")
+				;
+
+				username.appendTo(username_cell);
+				username_cell.appendTo(username_row);
+				username_row.appendTo(table);
+
+				password.appendTo(password_cell);
+				password_cell.appendTo(password_row);
+				password_row.appendTo(table);
+
+				submit.appendTo(submit_cell);
+				submit_cell.appendTo(submit_row);
+				submit_row.appendTo(table);
+
+				table.appendTo(form);
+				form.appendTo(login);
+
+				create_dlg("test3", "Test 3 - Login", login);
+			}
+
+			var create_dlg = function(id, title, content)
+			{
+				if($("#" + id).length)
+				{
+					if($("#" + id).is(":visible"))
+					{
+						$("#" + id).hide();
+					}
+					else
+					{
+						$("#" + id).show();
+					}
+					return;
+				}
+
+				var dlg_container = $("<div/>")
+					.attr("id", id)
+					.attr("class", "dlg_container")
+					.css("min-width", "50px")
+					.css("min-height", "50px")
+				;
+				var dlg_titlebar = $("<div/>")
+					.attr("id", id + "_titlebar")
+					.attr("class", "dlg_titlebar")
+					.text(title)
+				;
+				var dlg_exit = $("<div/>")
+					.attr("class", "dlg_exit")
+					.html("<a href=\"#\" onclick=\"$('#" + id + "').hide();\"><img src=\"img/exit.png\" /></a>")
+				;
+				var dlg_content = $("<div/>")
+					.attr("class", "dlg_content")
+					.html(content);
+				;
+
+				dlg_titlebar.appendTo(dlg_container);
+				dlg_exit.appendTo(dlg_titlebar);
+				dlg_content.insertAfter(dlg_titlebar);
+
+				dlg_container.draggable({ handle: dlg_titlebar, containment: "parent" })
+				dlg_container.appendTo($("#container"));
+			};
+		</script>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="taskbar">WebOS
+				<div id="nav">
+					<ul>
+						<li><a href="#" onclick="test1();">Test 1</a></li>
+						<li><a href="#" onclick="test2();">Test 2</a></li>
+						<li><a href="#" onclick="test3();">Test 3</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="watermark"></div>
+			<div id="footer">Copyright &copy Lewis Crouch. All rights reserved.</div>
+		</div>
+	</body>
+</html>

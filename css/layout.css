@@ -1,0 +1,175 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+body
+{
+	background-color: #dddddd;
+}
+a
+{
+	text-decoration: none;
+	color: #0099ff;
+}
+a:hover
+{
+	color: #ff9900;
+}
+#container
+{
+	font-family: 'Oswald', sans-serif;
+	background-color: #dddddd;
+	color: #444444;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+#taskbar
+{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	padding: 6px;
+	background-color: #fff;
+	box-shadow: 0px 1px 2px #333333;
+	z-index: 1000;
+}
+#nav
+{
+	display: inline;
+	font-size: 12px;
+}
+#nav ul, #nav li
+{
+	display: inline;
+}
+#nav li
+{
+	padding-left: 15px;
+}
+#nav a
+{
+	color: #aaaaaa;
+}
+#nav a:hover
+{
+	color: #ff9900;
+}
+#watermark
+{
+	position: fixed;
+	width: 242px;
+	height: 66px;
+	background-image: url('../img/watermark.png');
+	bottom: 0px;
+	right: 0px;
+	z-index: 0;
+}
+#footer
+{
+	position: fixed;
+	width: 100%;
+	padding: 12px;
+	bottom: 0px;
+	left: 0px;
+	padding: 12px;
+	text-align: center;
+	font-size: 12px;
+	color: #aaaaaa;
+	text-shadow: 0px -1px #fff;
+	z-index: 0;
+}
+.dlg_container
+{
+	position: absolute;
+	margin: 12px;
+	margin-top: 50px;
+	display: inline-block;
+	background-color: #ffffff;
+	box-shadow: 0px 1px 2px #333333;
+	z-index: 1;
+}
+.dlg_titlebar
+{
+	cursor: move;
+	padding: 6px;
+	padding-left: 12px;
+	background-color: #fff;
+	border-bottom: 1px solid #eeeeee;
+}
+.dlg_exit
+{
+	float: right;
+}
+.dlg_exit img
+{
+	padding-top: 7px;
+	padding-right: 7px;
+}
+.dlg_content
+{
+	padding: 16px;
+	font-family: sans-serif;
+	font-size: 14px;
+}
+#login table
+{
+	text-align: center;
+}
+#login td
+{
+	padding: 3px;
+}
+#login input
+{
+	width: 100%;
+	padding: 6px;
+	background-color: #ffffff;
+	border: 1px solid #aaa;
+}
+#login input[type="submit"]
+{
+	background-color: #0099ff;
+	color: #ffffff;
+	border: none;
+}
+#login input[type="submit"]:hover
+{
+	background-color: #ff9900;
+}
+
+.motd
+{
+	margin-top: 20px;
+	text-align: center;
+	padding: 16px;
+}
+.motd_heading
+{
+	font-size: 36px;
+}
+.section
+{
+	margin: auto;
+	margin-top: 24px;
+	text-align: center;
+}
+.section li
+{
+	display: inline-block;
+}
+.section a:hover
+{
+	color: #ff9900;
+}
+.heading
+{
+	padding: 6px;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
